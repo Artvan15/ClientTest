@@ -17,18 +17,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QTcpSocket *socket;
-    QByteArray data;
-
-public slots:
-    void sockReady();
-    void sockDisc();
-
 private slots:
     void on_pushButton_clicked();
     void er(QAbstractSocket::SocketError);
+    void sockReady();
+    void sockDisc();
+    void connectYes();
 
 private:
     Ui::MainWindow *ui;
+    QTcpSocket *socket;
+    QByteArray data;
 };
 #endif // MAINWINDOW_H
