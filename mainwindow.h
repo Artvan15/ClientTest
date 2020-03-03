@@ -22,7 +22,7 @@ private slots:
     void er(QAbstractSocket::SocketError);
     void sockReady();
     void sockDisc();
-    void connectYes();
+    void connected();
 
 private:
     Ui::MainWindow *ui;

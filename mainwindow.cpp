@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     socket = new QTcpSocket(this);
 
     connect(socket, &QTcpSocket::readyRead, this, &MainWindow::sockReady);
-    connect(socket, &QTcpSocket::connected, this, &MainWindow::connectYes);
+    connect(socket, &QTcpSocket::connected, this, &MainWindow::connected);
     connect(socket, &QTcpSocket::disconnected, socket, &QTcpSocket::deleteLater);
     connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(er(QAbstractSocket::SocketError)));
 }
@@ -19,7 +19,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::connectYes(){
+void MainWindow::connected(){
     qDebug() << "Client is connected!";
 }
 
